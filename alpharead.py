@@ -5,7 +5,7 @@ from pyModbusTCP.client import ModbusClient
 from os import system
 
 # load registerlist from yaml file
-with open('registers_new.yaml', 'r') as f:
+with open('registers.yaml', 'r') as f:
     #data = list(yaml.load_all(f, Loader=SafeLoader))[0]
     data = yaml.safe_load(f)
 
