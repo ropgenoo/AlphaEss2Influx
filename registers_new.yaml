@@ -1,0 +1,114 @@
+#
+# register: 
+#
+#
+config:
+  modbus_host: "192.168.21.124"  # my Smile-Hi5 IP
+  modbus_port: 5200               # default ModbusPort 502
+  modbus_unitid: 0x55                 # Smile-Hi5 default ID 85
+  modbus_timeout: 10              # how long to wait for socket connection
+
+registers:
+  - name: pv1_voltage
+    description: "Spannung String 1"
+    register_address: 0x41D
+    register_size: 1
+    unit: V
+    scale: 0.1
+    type: "ushort"
+
+  - name: pv2_voltage
+    description: "Spannung String 2"
+    register_address: 0x421
+    register_size: 1
+    unit: V
+    scale: 0.1
+    type: "ushort"
+
+  - name: pv1_power
+    description: "Leistung String 1"
+    register_address: 0x41F
+    register_size:  2
+    unit: W
+    scale: 1
+    type: "uint"
+
+  - name: pv2_power
+    description: "Leistung String 2"
+    register_address: 0x423
+    register_size:  2
+    unit: W
+    scale: 1
+    type: "uint"
+
+  - name: inv_power_total
+    description: "WR Leistung gesamt"
+    register_address: 0x40C
+    register_size:  2
+    unit: W
+    scale: 1
+    type: "int"
+
+  - name: inv_temperature
+    description: "WR Temperatur"
+    register_address: 0x435
+    register_size:  1
+    unit: "°C"
+    scale: 0.1
+    type: "ushort"
+
+  - name: inv_total_energy
+    description: "WR Energie gesamt"
+    register_address: 0x43E
+    register_size:  2
+    unit: "kWh"
+    scale: 0.1
+    type: "uint"
+
+  - name: total_active_power
+    description: "Netz Leistung in/out (Grid Meter)"
+    register_address: 0x021
+    register_size:  2
+    unit: W
+    scale: 1
+    type: "int"
+
+  - name: grid_total_energy_feed
+    description: "Einspeisung gesamt (Grid Meter)"
+    register_address: 0x010
+    register_size:  2
+    unit: "kWh"
+    scale: 0.01
+    type: "uint"
+
+  - name: grid_total_energy_consume
+    description: "Netzbezug gesamt (Grid Meter)"
+    register_address: 0x012
+    register_size:  2
+    unit: "kWh"
+    scale: 0.01
+    type: "uint"
+
+  - name: battery_discharge_energy
+    description: "Batterie Entladeenergie"
+    register_address: 0x122
+    register_size:  2
+    unit: "kWh"
+    scale: 0.1
+    type: "uint"
+
+  - name: battery_voltage
+    description: "Batteriespannung"
+    register_address: 0x100
+    register_size:  1
+    unit: "V"
+    scale: 0.1
+    type: "ushort"
+
+  - name: battery_power
+    description: "Batterieleistung"
+    register_address: 0x126
+    register_size:  1
+    unit: "W"
+    scale: 1
+    type: "short"
