@@ -23,7 +23,7 @@ else:
 
 
 # open modbus connection to inverter or proxy (if using e.g. EVCC.io)
-mb_client = ModbusClient(host = mb_host, port = mb_port, unit_id = mb_unitid, auto_open=True, auto_close=False)
+mb_client = ModbusClient(host = mb_host, port = mb_port, unit_id = mb_unitid, timeout=mb_timeout, auto_open=True, auto_close=False)
 
 for register in data['registers']:
   #print (register)
